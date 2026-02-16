@@ -2,7 +2,7 @@ class HowToPlayScreen extends Screen {
  
   boolean active = true;
   
-  
+  Button tutorialB = new Button(200, 650, 175, 80);
   HowToPlayScreen(){
     
   }
@@ -28,7 +28,13 @@ class HowToPlayScreen extends Screen {
     text("empty to spawn crate.", 215, 250);
     
     text("This screen is a placeholder", 215, 300);
-   
+    
+    
+   fill(200, 200, 190);
+   tutorialB.draw();
+   fill(0, 0, 0);
+   textSize(32);
+   text("Tutorial", 235, 700);
   }
   
 }
