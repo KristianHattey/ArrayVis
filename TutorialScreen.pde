@@ -8,7 +8,7 @@ class TutorialScreen {
  
  Button spawner = new Button(30, 30, 175, 50, "spawn");
  
- Button restart = new Button(720, 30, 50, 50, "redo");
+ Button restart = new Button(720, 30, 50, 50, "restartTut");
  
  Button[] buttons;
  

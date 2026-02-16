@@ -65,7 +65,7 @@ class Button {
         }
         
         if (buttonType == "next") {
-          
+          switchScreens("tutorialToTutorial");
         }
         
         if (buttonType == "spawn") {
@@ -74,7 +74,7 @@ class Button {
         }
         
         if (buttonType == "restartTut") {
-          switchScreens("tutorialToTutorial");
+          switchScreens("redoTutorial");
           
         }
         
