@@ -11,7 +11,7 @@ class ArrayBox extends Button {
    containedBoxes = new Box[5];
    
    for(int i = 0; i < containedBoxes.length; i++) {
-     containedBoxes[i] = new Box(0, 0, 0, 0);
+     containedBoxes[i] = new Box(0, 0, 0, 0, "empty");
    }
    
    lastBoxX = x;
@@ -48,9 +48,24 @@ class ArrayBox extends Button {
        
      //}
      containedBoxes[0].x = x;
+     containedBoxes[0].y = y;
      containedBoxes[0].draw();
      
+      containedBoxes[1].x = x;
+     containedBoxes[1].y = y;
+     containedBoxes[1].draw();
      
+      containedBoxes[2].x = x;
+     containedBoxes[2].y = y;
+     containedBoxes[2].draw();
+     
+      containedBoxes[3].x = x;
+     containedBoxes[3].y = y;
+     containedBoxes[3].draw();
+     
+      containedBoxes[4].x = x;
+     containedBoxes[4].y = y;
+     containedBoxes[4].draw();
   }
   
   void addBox() {

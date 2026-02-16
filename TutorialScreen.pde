@@ -21,7 +21,7 @@ class TutorialScreen {
  
  TutorialScreen() {
  for(int i = 0; i < boxes.length; i++) {
-    this.boxes[i] = new Box(0, 0, 0, 0); 
+    this.boxes[i] = new Box(0, 0, 0, 0, "free"); 
    }
  }
  
@@ -63,7 +63,7 @@ class TutorialScreen {
  void spawnBox() {
    
    
-   Box b = new Box(150, 200, 50, 50);
+   Box b = new Box(150, 200, 50, 50, "free");
    
    for(int i = 0; i < boxes.length; i++) {
     boxes[i] = b; 
@@ -76,6 +76,7 @@ class TutorialScreen {
        arrayBox.containedBoxes[i] = b;
        b.dragging = false;
        b.draggable = false;
+       b.type = "contained";
    }
  }
 }

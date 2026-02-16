@@ -14,6 +14,8 @@ class Button {
   
   String buttonType;
   
+  float halfH, halfW;
+  
   
   Button(float x, float y, float w, float h, String type) {
     this.x = x;
@@ -24,6 +26,9 @@ class Button {
     buttonType = type;
     
     baseColor = normalColor;
+    
+    halfW = w/2;
+    halfH = h/2;
   }
   
   void setup() {
@@ -33,7 +38,7 @@ class Button {
   
  void update() {
    
-  if(mouseX > x -w && mouseX < x + w && mouseY > y-h && mouseY < y+h) {
+  if(mouseX > x  && mouseX < x + w && mouseY > y && mouseY < y+h) {
       isHovered = true;
       baseColor = hoveredColor;
       
