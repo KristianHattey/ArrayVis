@@ -34,6 +34,10 @@ void draw() {
 
 void switchScreens(String type) {
   
+  if (type == "redo") {
+      tutorialScreen.active = false;
+    }
+  
   if (type == "titleToTutorial") {
      if (howtoPlay.active == true) {
       howtoPlay.active = false;
@@ -43,7 +47,16 @@ void switchScreens(String type) {
   }
   
   if (type == "tutorialToTutorial") {
-    tutorialScreen = new TutorialScreen();
+    
+    if(tutorialScreen.active == true) {
+      tutorialScreen.active = false;
+    
+    }
+    
+    
+   
+    
+    
   }
   
   }

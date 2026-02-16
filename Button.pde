@@ -75,7 +75,7 @@ class Button {
         
         if (buttonType == "restartTut") {
           switchScreens("tutorialToTutorial");
-          print("wow");
+          
         }
         
         

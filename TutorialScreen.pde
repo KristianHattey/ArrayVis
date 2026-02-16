@@ -8,7 +8,7 @@ class TutorialScreen {
  
  Button spawner = new Button(30, 30, 175, 50, "spawn");
  
- Button restart = new Button(720, 30, 50, 50, "restartTut");
+ Button restart = new Button(720, 30, 50, 50, "redo");
  
  Button[] buttons;
  
@@ -29,16 +29,16 @@ class TutorialScreen {
  }
  
  void update() {
-   
+    next.update();
+   last.update();
+   spawner.update();
+   restart.update();
  }
  
  void draw() {
    fill(200, 200, 190);
    
-   next.update();
-   last.update();
-   spawner.update();
-   restart.update();
+  
    
    
    next.draw();

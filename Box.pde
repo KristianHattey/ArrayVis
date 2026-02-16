@@ -4,6 +4,8 @@ class Box extends Button {
   float drawx, drawy, draww, drawh;
   
   
+  
+  
   boolean dragging = false;
   
   Box(float x, float y, float w, float h) {
@@ -13,6 +15,8 @@ class Box extends Button {
     this.y = y;
     this.w = w;
     this.h = h;
+    
+    this.normalColor = color(255, 255, 255);
   }
   
   void setup() {
