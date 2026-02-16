@@ -71,27 +71,14 @@ class TutorialScreen {
  }
  
  void addBox() {
-    for(int i = 0; i < boxes.length; i++) {
-       
+   
+   Box b = boxes[0];
+    arrayBox.containedBoxes[0] = b;
       
-      Box b = boxes[i];
-      for(int j = 0; j < arrayBox.containedBoxes.length; j++) {
-        if(arrayBox.containedBoxes[j].type == "empty") {
-          
-         b.dragging = false;
-         b.draggable = false;
-         b.type = "contained";
-         arrayBox.containedBoxes[j] = b;
-
-       
-       
-       break;
-      }
       
-      print("nuh uh");
-     }
+      b.draggable = false;
+      b.dragging = false;
       
        
    }
  }
-}

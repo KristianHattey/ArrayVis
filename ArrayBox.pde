@@ -5,6 +5,10 @@ class ArrayBox extends Button {
   
   float lastBoxX = 0;
   
+  int fillNumber = 0;
+  
+  boolean oncePerFrame = false;
+  
   ArrayBox(float x, float y, float w, float h) {
    super(x, y, w, h, "ArrayBox");
    
@@ -15,6 +19,8 @@ class ArrayBox extends Button {
    }
    
    lastBoxX = x;
+   
+   fillNumber = 0;
   }
   
   
@@ -24,10 +30,17 @@ class ArrayBox extends Button {
   
   void update() {
     
+    oncePerFrame = true;
+    
+    if(oncePerFrame == true) {
     super.update();
      if(this.result == true) {
     print("box");
   }
+  
+    }
+    
+    oncePerFrame = false;
   
   }
   
