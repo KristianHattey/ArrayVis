@@ -7,6 +7,7 @@ class Box extends Button {
   
   
   boolean dragging = false;
+  boolean draggable = true;
   
   Box(float x, float y, float w, float h) {
     super(x, y, w, h, "Box");
@@ -26,7 +27,7 @@ class Box extends Button {
   void update() {
     
     super.update();
-    if(this.result == true) {
+    if(this.result == true && draggable == true) {
     dragging = true;
   }
   

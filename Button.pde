@@ -33,7 +33,7 @@ class Button {
   
  void update() {
    
-  if(mouseX > x-w && mouseX < x + w && mouseY > y-h && mouseY < y + h) {
+  if(mouseX > x -w && mouseX < x + w && mouseY > y-h && mouseY < y+h) {
       isHovered = true;
       baseColor = hoveredColor;
       
@@ -72,7 +72,12 @@ class Button {
           tutorialScreen.spawnBox();
           
         }
-        
+        if (buttonType == "ArrayBox") {
+         
+        tutorialScreen.addBox();
+  
+          
+        }
         if (buttonType == "restartTut") {
           switchScreens("redoTutorial");
           

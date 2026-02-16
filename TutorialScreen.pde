@@ -10,6 +10,8 @@ class TutorialScreen {
  
  Button restart = new Button(720, 30, 50, 50, "restartTut");
  
+ ArrayBox arrayBox = new ArrayBox(250, 250, 300, 100);
+ 
  Button[] buttons;
  
  Box[] boxes = new Box[1];
@@ -33,6 +35,7 @@ class TutorialScreen {
    last.update();
    spawner.update();
    restart.update();
+   arrayBox.update();
  }
  
  void draw() {
@@ -40,7 +43,7 @@ class TutorialScreen {
    
   
    
-   
+   arrayBox.draw();
    next.draw();
    last.draw();
    spawner.draw();
@@ -60,10 +63,19 @@ class TutorialScreen {
  void spawnBox() {
    
    
-   Box b = new Box(200, 200, 50, 50);
+   Box b = new Box(150, 200, 50, 50);
    
    for(int i = 0; i < boxes.length; i++) {
     boxes[i] = b; 
+   }
+ }
+ 
+ void addBox() {
+    for(int i = 0; i < boxes.length; i++) {
+       Box b = boxes[i];
+       arrayBox.containedBoxes[i] = b;
+       b.dragging = false;
+       b.draggable = false;
    }
  }
 }
