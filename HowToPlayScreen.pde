@@ -21,6 +21,14 @@ class HowToPlayScreen extends Screen {
     
     fill(200, 200, 190);
     rect(200, 200, 400, 400);
+    
+    fill(0, 0, 0);
+    textSize(24);
+    text("Press spawn button when array is ", 215, 225);
+    text("empty to spawn crate.", 215, 250);
+    
+    text("This screen is a placeholder", 215, 300);
+   
   }
   
 }
