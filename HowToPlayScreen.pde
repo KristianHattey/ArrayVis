@@ -2,13 +2,17 @@ class HowToPlayScreen extends Screen {
  
   boolean active = true;
   
-  Button tutorialB = new Button(200, 650, 175, 80);
+  Button tutorialB = new Button(200, 650, 175, 80, "tutorialButton");
   HowToPlayScreen(){
     
   }
   
   void setup() {
     
+  }
+  
+  void update(){
+    tutorialB.update();
   }
   
   void draw() {
