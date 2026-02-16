@@ -96,6 +96,10 @@ class Button {
     
     }
     
+    if (!mousePressed) {
+      return false;
+    }
+    
     return false;
   }
   
