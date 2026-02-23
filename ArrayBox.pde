@@ -13,6 +13,9 @@ class ArrayBox extends Button {
   
   String type = "free";
   
+   boolean dragging = false;
+  boolean draggable = true;
+  
   
   
   boolean oncePerFrame = false;
@@ -42,12 +45,17 @@ class ArrayBox extends Button {
     
     if(oncePerFrame == true) {
     super.update();
-    
-     if(this.result == true) {
+  if(this.result == true && draggable == true && boxMode == true) {
+    dragging = true;
+  }
+  if(boxMode == false) dragging = false;
+     else if(this.result == true) {
     print("box");
   }
  
   
+  
+ 
     }
     
     
@@ -107,7 +115,12 @@ class ArrayBox extends Button {
      }
      
      else if(drawMode == "container") {
-        rect(x, y, 75, 60);
+       
+         
+     if (dragging == true) {
+       rect(mouseX-75/2, mouseY-60/2, 75, 60); 
+     }
+     else rect(x, y, 75, 60);
      }
     
   }

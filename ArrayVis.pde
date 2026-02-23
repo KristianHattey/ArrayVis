@@ -16,7 +16,7 @@ float gameTime = dt/1000;
 
 boolean transitionedScreen = false;
 
-boolean boxMode = true;
+boolean boxMode = false;
 
 
 void setup() {
@@ -101,7 +101,18 @@ void switchScreens(String type, int screenNumber) {
 void keyPressed() {
   
   if(key == 'b') {
+    if(boxMode == true) {
+      boxMode = false;
+      if(tutorialScreen.active) tutorialScreen.arrayBox.drawMode = "";
+    }
+    else {
+      boxMode = true;
+       if(tutorialScreen.active) tutorialScreen.arrayBox.drawMode = "container";
+    }
     
+   
+    
+    print(boxMode);
   }
   
 }

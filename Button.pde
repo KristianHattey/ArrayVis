@@ -137,7 +137,7 @@ class Button {
          if(buttonType == "ArrayBox" && boxMode == true && tutorialScreen.arrayBox.containedBoxes[4].type != "empty") {
           if (tutorialScreen.active && tutorialScreen.pageNumber != 1) {
             
-            tutorialScreen.arrayBox.drawMode = "container";
+            
             
           }
         }
