@@ -20,6 +20,10 @@ class Button {
   
   float halfH, halfW;
   
+  boolean pressStopper = false;
+  
+  boolean prevResult = false;
+  
   
   Button(float x, float y, float w, float h, String type) {
     this.x = x;
@@ -49,7 +53,14 @@ class Button {
       isHovered = true;
       baseColor = hoveredColor;
       
+      
+      
+      
       result = isPressed();
+      
+      
+      
+      
       
       
     }
@@ -76,8 +87,9 @@ class Button {
       
       if(mousePressed && (mouseButton == LEFT) && isPressedButton == false) {
         baseColor = pressedColor;
-        
+        pressStopper = true;
         isPressedButton = true;
+        prevResult = true;
         
         if(buttonType == "tutorialButton") {
          switchScreens("titleToTutorial", 1); 
@@ -171,11 +183,15 @@ class Button {
     if (!mousePressed) {
       isPressedButton = false;
       
+        
+      
       return false;
     }
+    isPressedButton = false;
     
     return false;
   }
   
   
+
 }
