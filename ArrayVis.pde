@@ -16,6 +16,8 @@ float gameTime = dt/1000;
 
 boolean transitionedScreen = false;
 
+boolean boxMode = true;
+
 
 void setup() {
   size(800, 800);
@@ -93,5 +95,13 @@ void switchScreens(String type, int screenNumber) {
       transitionedScreen = false;
     
     }
+  
+}
+
+void keyPressed() {
+  
+  if(key == 'b') {
+    
+  }
   
 }

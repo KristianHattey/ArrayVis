@@ -128,13 +128,26 @@ class Button {
         if(tutorialScreen.active == true && tutorialScreen.arrayBox.containedBoxes[4].type != "empty") {
         tutorialScreen.arrayBox.altFunct = true;
         }
+        
+       
   
           
         }
+        
+         if(buttonType == "ArrayBox" && boxMode == true && tutorialScreen.arrayBox.containedBoxes[4].type != "empty") {
+          if (tutorialScreen.active && tutorialScreen.pageNumber != 1) {
+            
+            tutorialScreen.arrayBox.drawMode = "container";
+            
+          }
+        }
+        
         if (buttonType == "restartTut") {
           switchScreens("redoTutorial", tutorialScreen.pageNumber);
           
         }
+        
+        
         
         
         

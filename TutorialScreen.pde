@@ -12,6 +12,8 @@ class TutorialScreen {
  
  ArrayBox arrayBox = new ArrayBox(250, 250, 300, 100);
  
+ 
+ 
  Button[] buttons;
  
  Box[] boxes = new Box[1];
@@ -21,6 +23,8 @@ class TutorialScreen {
  int randomChance = 0;
  
  int pageNumber = 0;
+ 
+ TDArrayBox twoDArray = new TDArrayBox(250, 450, 300, 100);
  
  
  TutorialScreen(int page) {
@@ -42,9 +46,15 @@ class TutorialScreen {
    spawner.update();
    restart.update();
    arrayBox.update();
+   
+   if(pageNumber != 1) {
+     twoDArray.update();
+   }
  }
  
  void draw() {
+   
+   background(100, 100, 100);
    fill(200, 200, 190);
    
   
@@ -55,6 +65,10 @@ class TutorialScreen {
    spawner.draw();
    restart.draw();
    
+   if(pageNumber != 1) {
+     twoDArray.draw();
+   }
+   
    
    for(int i = 0; i < boxes.length; i++) {
      
@@ -63,7 +77,7 @@ class TutorialScreen {
     
    }
    
-   for(int i = 0; i < arrayBox.containedBoxes.length; i++) {
+   for(int i = 0; i < arrayBox.containedBoxes.length && arrayBox.drawMode != "container"; i++) {
      
      arrayBox.containedBoxes[i].update();
     arrayBox.containedBoxes[i].draw();

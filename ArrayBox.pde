@@ -3,9 +3,17 @@ class ArrayBox extends Button {
   
   Box[] containedBoxes;
   
+  int arrayBoxNumber = 1;
+  
   float lastBoxX = 0;
   
   int fillNumber = 0;
+  
+  String drawMode = "";
+  
+  String type = "free";
+  
+  
   
   boolean oncePerFrame = false;
   
@@ -51,7 +59,7 @@ class ArrayBox extends Button {
     fill(super.baseColor);
      
      
-     rect(x, y, w, h);
+     
      
      
      //for(int i = 0; i < containedBoxes.length; i++) {
@@ -63,36 +71,45 @@ class ArrayBox extends Button {
      //  b.draw();
        
      //}
-     containedBoxes[0].x = x;
-     containedBoxes[0].y = y;
-     containedBoxes[0].draw();
      
-      containedBoxes[1].x = x + 50;
-     containedBoxes[1].y = y;
-     containedBoxes[1].draw();
+       if(drawMode != "container") {
+         rect(x, y, w, h);
+          containedBoxes[0].x = x;
+         containedBoxes[0].y = y;
+       containedBoxes[0].draw();
+       
+        containedBoxes[1].x = x + 50;
+       containedBoxes[1].y = y;
+       containedBoxes[1].draw();
+       
+        containedBoxes[2].x = x + 100;
+       containedBoxes[2].y = y;
+       containedBoxes[2].draw();
+       
+        containedBoxes[3].x = x + 150;
+       containedBoxes[3].y = y;
+       containedBoxes[3].draw();
+       
+        containedBoxes[4].x = x + 200;
+       containedBoxes[4].y = y;
+       containedBoxes[4].draw();
+       
+       fill(0,0,0);
+      if (tutorialScreen.pageNumber != 0) {
+        textSize(18);
+      text(containedBoxes[0].type + "  " + containedBoxes[1].type, x + 15, y+80);
+  
+      text(containedBoxes[2].type + "  " + containedBoxes[3].type, x + 130,y+80);
+  
+      text(containedBoxes[4].type,x+245,y+80);
+  
+      }
+     }
      
-      containedBoxes[2].x = x + 100;
-     containedBoxes[2].y = y;
-     containedBoxes[2].draw();
-     
-      containedBoxes[3].x = x + 150;
-     containedBoxes[3].y = y;
-     containedBoxes[3].draw();
-     
-      containedBoxes[4].x = x + 200;
-     containedBoxes[4].y = y;
-     containedBoxes[4].draw();
-     
-     fill(0,0,0);
-    if (tutorialScreen.pageNumber != 0) {
-      textSize(18);
-    text(containedBoxes[0].type + "  " + containedBoxes[1].type, x + 15, y+80);
-
-    text(containedBoxes[2].type + "  " + containedBoxes[3].type, x + 130,y+80);
-
-    text(containedBoxes[4].type,x+245,y+80);
-
-    }
+     else if(drawMode == "container") {
+        rect(x, y, 75, 60);
+     }
+    
   }
   
   void addBox() {

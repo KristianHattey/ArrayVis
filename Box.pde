@@ -10,6 +10,7 @@ class Box extends Button {
   boolean draggable = true;
   
   String type = "";
+  String subType = "";
   
   Box(float x, float y, float w, float h, String status) {
     super(x, y, w, h, "Box");
