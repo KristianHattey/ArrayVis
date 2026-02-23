@@ -18,6 +18,8 @@ class TutorialScreen {
  
  Box[] array1;
  
+ int randomChance = 0;
+ 
  
  TutorialScreen() {
  for(int i = 0; i < boxes.length; i++) {
@@ -57,27 +59,59 @@ class TutorialScreen {
     
    }
    
+   for(int i = 0; i < arrayBox.containedBoxes.length; i++) {
+     
+     arrayBox.containedBoxes[i].update();
+    arrayBox.containedBoxes[i].draw();
+    
+   }
+   
  }
  
  
  void spawnBox() {
    
-   
-   Box b = new Box(150, 200, 50, 50, "free");
+   randomChance = int(random(4));
+   Box b = new Box(150, 200, 50, 50, "car");
+   if (randomChance == 1) {
+   b.type = "car";
+   }
+   else if (randomChance == 2) {
+    b.type = "bear";
+   }
+   else if (randomChance == 3) {
+    b.type = "train";
+   }
    
    for(int i = 0; i < boxes.length; i++) {
     boxes[i] = b; 
    }
+   
+   print(randomChance);
  }
  
  void addBox() {
    
-   Box b = boxes[0];
-    arrayBox.containedBoxes[0] = b;
+    Box b = boxes[0];
+    for(int i = 0; i < arrayBox.containedBoxes.length; i++) {
+      
+      if (arrayBox.containedBoxes[i].type == "empty" && b.w != 0) {
+        arrayBox.containedBoxes[i] = b;
+        print("can fill");
+        break;
+      }
+      else if (arrayBox.containedBoxes[i].w != 0){
+        print("full");
+      }
+      
+      
+    
+    }
       
       
       b.draggable = false;
       b.dragging = false;
+      this.boxes[0] = new Box(0, 0, 0, 0, "free"); 
       
        
    }

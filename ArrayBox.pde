@@ -34,11 +34,14 @@ class ArrayBox extends Button {
     
     if(oncePerFrame == true) {
     super.update();
+    
      if(this.result == true) {
     print("box");
   }
+ 
   
     }
+    
     
     oncePerFrame = false;
   
@@ -83,5 +86,6 @@ class ArrayBox extends Button {
   
   void addBox() {
     tutorialScreen.addBox();
+    
   }
 }

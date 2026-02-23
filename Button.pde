@@ -7,6 +7,10 @@ class Button {
   
   boolean isHovered = false;
   
+  boolean isPressedButton = false;
+  
+  boolean altFunct = false;
+  
   float x, y, w, h;
   
   color normalColor = 50, hoveredColor = 60, pressedColor = 180;
@@ -38,17 +42,22 @@ class Button {
   
  void update() {
    
-  if(mouseX > x  && mouseX < x + w && mouseY > y && mouseY < y+h) {
+   
+   result = false;
+   
+  if(mouseX > x  && mouseX < x + w && mouseY > y && mouseY < y+h && altFunct == false) {
       isHovered = true;
       baseColor = hoveredColor;
       
       result = isPressed();
+      
+      
     }
     
     else {
       isHovered = false;
       baseColor = normalColor;
-           
+       
     } 
     
     
@@ -62,8 +71,13 @@ class Button {
   
  boolean isPressed() {
     if(isHovered) {
-      if(mousePressed && (mouseButton == LEFT)) {
+      
+      
+      
+      if(mousePressed && (mouseButton == LEFT) && isPressedButton == false) {
         baseColor = pressedColor;
+        
+        isPressedButton = true;
         
         if(buttonType == "tutorialButton") {
          switchScreens("titleToTutorial"); 
@@ -77,9 +91,13 @@ class Button {
           tutorialScreen.spawnBox();
           
         }
-        if (buttonType == "ArrayBox") {
+        if (buttonType == "ArrayBox" && altFunct == false) {
          
         tutorialScreen.addBox();
+        
+        if(tutorialScreen.active == true && tutorialScreen.arrayBox.containedBoxes[4].type != "empty") {
+        tutorialScreen.arrayBox.altFunct = true;
+        }
   
           
         }
@@ -97,6 +115,7 @@ class Button {
     }
     
     if (!mousePressed) {
+      isPressedButton = false;
       return false;
     }
     
