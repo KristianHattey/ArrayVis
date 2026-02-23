@@ -20,10 +20,12 @@ class ArrayBox extends Button {
   
   boolean oncePerFrame = false;
   
-  ArrayBox(float x, float y, float w, float h) {
+  ArrayBox(float x, float y, float w, float h, String thing) {
    super(x, y, w, h, "ArrayBox");
    
    containedBoxes = new Box[5];
+   
+   type = thing;
    
    for(int i = 0; i < containedBoxes.length; i++) {
      containedBoxes[i] = new Box(0, 0, 0, 0, "empty");

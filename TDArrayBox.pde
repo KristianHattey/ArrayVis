@@ -8,7 +8,7 @@ class TDArrayBox extends Button {
    containedArrays = new ArrayBox[5];
    
    for(int i = 0; i < containedArrays.length; i++) {
-     containedArrays[i] = new ArrayBox(0, 0, 0, 0);
+     containedArrays[i] = new ArrayBox(0, 0, 0, 0, "empty");
      containedArrays[i].drawMode = "container";
    }
    

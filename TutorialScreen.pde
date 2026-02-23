@@ -10,7 +10,7 @@ class TutorialScreen {
  
  Button restart = new Button(720, 30, 50, 50, "restartTut");
  
- ArrayBox arrayBox = new ArrayBox(250, 250, 300, 100);
+ ArrayBox arrayBox = new ArrayBox(250, 250, 300, 100, "free");
  
  
  
@@ -118,7 +118,7 @@ class TutorialScreen {
  
  void newArrayBox() {
   for(int i = 0; i < boxes.length; i++) {
-    this.arrayBoxes[i] = new ArrayBox(250, 250, 300, 100); 
+    this.arrayBoxes[i] = new ArrayBox(250, 250, 300, 100, "empty"); 
    } 
  }
  
@@ -153,7 +153,7 @@ class TutorialScreen {
     ArrayBox b = arrayBoxes[0];
     for(int i = 0; i < twoDArray.containedArrays.length; i++) {
       
-      if (twoDArray.containedArrays[i].w == 0 && b.w != 0) {
+      if (twoDArray.containedArrays[i].type == "empty" && b.w != 0) {
         twoDArray.containedArrays[i] = b;
         b.drawMode = "container";
         print("can fill");
