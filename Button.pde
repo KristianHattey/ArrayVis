@@ -138,7 +138,7 @@ class Button {
         tutorialScreen.addBox();
         
         if(tutorialScreen.active == true && tutorialScreen.arrayBox.containedBoxes[4].type != "empty") {
-        tutorialScreen.arrayBoxes[0].altFunct = true;
+        tutorialScreen.arrayBox.altFunct = true;
         }
         
        
@@ -161,9 +161,7 @@ class Button {
         
         if (buttonType == "TDArrayBox" && altFunct == false) {
          
-          tutorialScreen.arrayBoxes[0].altFunct = true;
         tutorialScreen.addArrayBox();
-        
         
         if(tutorialScreen.active == true && tutorialScreen.arrayBox.containedBoxes[4].type != "empty") {
         tutorialScreen.twoDArray.altFunct = true;
