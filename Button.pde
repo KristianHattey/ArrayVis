@@ -125,8 +125,8 @@ class Button {
          
         tutorialScreen.addBox();
         
-        if(tutorialScreen.active == true && tutorialScreen.arrayBox.containedBoxes[4].type != "empty") {
-        tutorialScreen.arrayBox.altFunct = true;
+        if(tutorialScreen.active == true && tutorialScreen.arrayBoxes[0].containedBoxes[4].type != "empty") {
+        tutorialScreen.arrayBoxes[0].altFunct = true;
         }
         
        
@@ -147,11 +147,11 @@ class Button {
           
         }
         
-        if (buttonType == "TDArrayBox" && altFunct == false) {
+        if (buttonType == "TDArrayBox" && altFunct == false && boxMode) {
          
         tutorialScreen.addArrayBox();
         
-        if(tutorialScreen.active == true && tutorialScreen.arrayBox.containedBoxes[4].type != "empty") {
+        if(tutorialScreen.active == true && tutorialScreen.arrayBoxes[0].containedBoxes[4].type != "empty") {
         tutorialScreen.twoDArray.altFunct = true;
         }
           }

@@ -10,7 +10,7 @@ class TutorialScreen {
  
  Button restart = new Button(720, 30, 50, 50, "restartTut");
  
- ArrayBox arrayBox = new ArrayBox(250, 250, 300, 100, "free");
+
  
  
  
@@ -35,7 +35,7 @@ class TutorialScreen {
    }
    
    for(int i = 0; i < boxes.length; i++) {
-    this.arrayBoxes[i] = arrayBox;
+    this.arrayBoxes[i] = new ArrayBox(250, 250, 300, 100, "free");
    }
    
    pageNumber = page;
@@ -51,7 +51,7 @@ class TutorialScreen {
    last.update();
    spawner.update();
    restart.update();
-   arrayBox.update();
+   this.arrayBoxes[0].update();
    
    if(pageNumber != 1) {
      twoDArray.update();
@@ -65,7 +65,7 @@ class TutorialScreen {
    
   
    
-   arrayBox.draw();
+   
    next.draw();
    last.draw();
    spawner.draw();
@@ -85,10 +85,10 @@ class TutorialScreen {
     
    }
    
-   for(int i = 0; i < arrayBox.containedBoxes.length && arrayBox.drawMode != "container"; i++) {
+   for(int i = 0; i < arrayBoxes[0].containedBoxes.length && arrayBoxes[0].drawMode != "container"; i++) {
      
-     arrayBox.containedBoxes[i].update();
-    arrayBox.containedBoxes[i].draw();
+     arrayBoxes[0].containedBoxes[i].update();
+    arrayBoxes[0].containedBoxes[i].draw();
     
    }
    
@@ -125,14 +125,14 @@ class TutorialScreen {
  void addBox() {
    
     Box b = boxes[0];
-    for(int i = 0; i < arrayBox.containedBoxes.length; i++) {
+    for(int i = 0; i < arrayBoxes[0].containedBoxes.length; i++) {
       
-      if (arrayBox.containedBoxes[i].type == "empty" && b.w != 0) {
-        arrayBox.containedBoxes[i] = b;
+      if (arrayBoxes[0].containedBoxes[i].type == "empty" && b.w != 0) {
+        arrayBoxes[0].containedBoxes[i] = b;
         print("can fill");
         break;
       }
-      else if (arrayBox.containedBoxes[i].w != 0){
+      else if (arrayBoxes[0].containedBoxes[i].w != 0){
         print("full");
       }
       
@@ -170,7 +170,7 @@ class TutorialScreen {
       
       b.draggable = false;
       b.dragging = false;
-     newArrayBox();
-       
+     
+      this.arrayBoxes[0] = new ArrayBox(250, 250, 300, 100, "free");  
    }
  }

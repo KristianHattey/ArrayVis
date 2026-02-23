@@ -56,17 +56,17 @@ class OrderScreen {
   void tallyOrder() {
     if(uncounted == true) {
        uncounted = false;
-      for(int i = 0; i < tutorialScreen.arrayBox.containedBoxes.length; i++) {
-        if(tutorialScreen.arrayBox.containedBoxes[i].type == "bear") {
+      for(int i = 0; i < tutorialScreen.arrayBoxes[0].containedBoxes.length; i++) {
+        if(tutorialScreen.arrayBoxes[0].containedBoxes[i].type == "bear") {
           bears += 1;
           
         }
-        else if(tutorialScreen.arrayBox.containedBoxes[i].type == "car") {
+        else if(tutorialScreen.arrayBoxes[0].containedBoxes[i].type == "car") {
           cars += 1;
 
         }
 
-        else if(tutorialScreen.arrayBox.containedBoxes[i].type == "train") {
+        else if(tutorialScreen.arrayBoxes[0].containedBoxes[i].type == "train") {
           trains += 1;
 
         }
