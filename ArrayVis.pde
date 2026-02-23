@@ -110,6 +110,7 @@ void keyPressed() {
        if(tutorialScreen.active) {
          tutorialScreen.arrayBox.drawMode = "container";
          tutorialScreen.arrayBox.draggable = true;
+         tutorialScreen.arrayBox.altFunct = false;
        }
        
     }
