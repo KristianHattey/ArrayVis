@@ -76,7 +76,7 @@ class Button {
       
       if(mousePressed && (mouseButton == LEFT) && isPressedButton == false) {
         baseColor = pressedColor;
-        
+        leftClick = true;
         isPressedButton = true;
         
         if(buttonType == "tutorialButton") {

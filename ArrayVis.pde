@@ -18,6 +18,10 @@ boolean transitionedScreen = false;
 
 boolean boxMode = false;
 
+boolean leftClick;
+
+boolean prevLeftClick;
+
 
 void setup() {
   size(800, 800);
@@ -124,4 +128,16 @@ void keyPressed() {
     print(boxMode);
   }
   
+}
+
+void mousePressed(){
+if(mouseButton == LEFT) leftClick = true;
+
+}
+
+void mouseReleased(){
+if (mouseButton == LEFT) { 
+    leftClick = false;
+    prevLeftClick = false;
+  }
 }

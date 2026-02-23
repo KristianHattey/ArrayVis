@@ -40,28 +40,24 @@ class TDArrayBox extends Button {
     }
     
     if(containedArrays[1].w != 0) {
-      containedArrays[1].x = x;
+      containedArrays[1].x = x + 75;
      containedArrays[1].y = y;
      containedArrays[1].draw();
     }
     
     if(containedArrays[2].w != 0) {
-      containedArrays[2].x = x;
+      containedArrays[2].x = x + 150;
      containedArrays[2].y = y;
      containedArrays[2].draw();
     }
     
     if(containedArrays[3].w != 0) {
-      containedArrays[3].x = x;
+      containedArrays[3].x = x + 225;
      containedArrays[3].y = y;
      containedArrays[3].draw();
     }
     
-    if(containedArrays[4].w != 0) {
-      containedArrays[4].x = x;
-     containedArrays[4].y = y;
-     containedArrays[4].draw();
-    }
+    
     
      
      fill(0,0,0);
