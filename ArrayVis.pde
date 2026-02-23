@@ -107,7 +107,11 @@ void keyPressed() {
     }
     else {
       boxMode = true;
-       if(tutorialScreen.active) tutorialScreen.arrayBox.drawMode = "container";
+       if(tutorialScreen.active) {
+         tutorialScreen.arrayBox.drawMode = "container";
+         tutorialScreen.arrayBox.draggable = true;
+       }
+       
     }
     
    
