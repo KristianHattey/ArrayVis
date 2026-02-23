@@ -106,6 +106,17 @@ class Button {
           }
         }
         
+        if (buttonType == "last") {
+          
+          
+          
+         if (tutorialScreen.active && tutorialScreen.pageNumber == 1) {
+            
+            switchScreens("tutorialTitle",0);
+            
+          }
+        }
+        
         if (buttonType == "spawn") {
           tutorialScreen.spawnBox();
           

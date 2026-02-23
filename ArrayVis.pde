@@ -71,6 +71,16 @@ void switchScreens(String type, int screenNumber) {
     }
   }
   
+  else if (type == "tutorialTitle") {
+     if (howtoPlay.active == false) {
+      howtoPlay.active = true;
+      
+      tutorialScreen.active = false;
+     
+     transitionedScreen = false;
+    }
+  }
+  
    else if (type == "order") {
     
     if(tutorialScreen.active == true) {
