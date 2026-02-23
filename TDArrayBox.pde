@@ -3,7 +3,7 @@ class TDArrayBox extends Button {
   ArrayBox[] containedArrays;
   
   TDArrayBox(float x, float y, float w, float h) {
-   super(x, y, w, h, "ArrayBox");
+   super(x, y, w, h, "TDArrayBox");
    
    containedArrays = new ArrayBox[5];
    
@@ -22,7 +22,7 @@ class TDArrayBox extends Button {
   }
   
   void update() {
-    
+    super.update();
 
   }
   

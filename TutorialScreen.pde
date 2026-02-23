@@ -20,6 +20,8 @@ class TutorialScreen {
  
  Box[] array1;
  
+ ArrayBox [] arrayBoxes = new ArrayBox[1];
+ 
  int randomChance = 0;
  
  int pageNumber = 0;
@@ -30,6 +32,10 @@ class TutorialScreen {
  TutorialScreen(int page) {
  for(int i = 0; i < boxes.length; i++) {
     this.boxes[i] = new Box(0, 0, 0, 0, "free"); 
+   }
+   
+   for(int i = 0; i < boxes.length; i++) {
+    this.arrayBoxes[i] = arrayBox;
    }
    
    pageNumber = page;
@@ -68,6 +74,8 @@ class TutorialScreen {
    if(pageNumber != 1) {
      twoDArray.draw();
    }
+   
+   this.arrayBoxes[0].draw();
    
    
    for(int i = 0; i < boxes.length; i++) {
@@ -108,6 +116,12 @@ class TutorialScreen {
    print(randomChance);
  }
  
+ void newArrayBox() {
+  for(int i = 0; i < boxes.length; i++) {
+    this.arrayBoxes[i] = new ArrayBox(250, 250, 300, 100); 
+   } 
+ }
+ 
  void addBox() {
    
     Box b = boxes[0];
@@ -131,6 +145,32 @@ class TutorialScreen {
       b.dragging = false;
       this.boxes[0] = new Box(0, 0, 0, 0, "free"); 
       
+       
+   }
+   
+   void addArrayBox() {
+   
+    ArrayBox b = arrayBoxes[0];
+    for(int i = 0; i < twoDArray.containedArrays.length; i++) {
+      
+      if (twoDArray.containedArrays[i].w == 0 && b.w != 0) {
+        twoDArray.containedArrays[i] = b;
+        b.drawMode = "container";
+        print("can fill");
+        break;
+      }
+      else if (twoDArray.containedArrays[i].w != 0){
+        print("full");
+      }
+      
+      
+    
+    }
+      
+      
+      b.draggable = false;
+      b.dragging = false;
+     newArrayBox();
        
    }
  }

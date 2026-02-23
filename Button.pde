@@ -121,7 +121,7 @@ class Button {
           tutorialScreen.spawnBox();
           
         }
-        if (buttonType == "ArrayBox" && altFunct == false) {
+        if (buttonType == "ArrayBox" && altFunct == false && boxMode == false) {
          
         tutorialScreen.addBox();
         
@@ -146,6 +146,15 @@ class Button {
           switchScreens("redoTutorial", tutorialScreen.pageNumber);
           
         }
+        
+        if (buttonType == "TDArrayBox" && altFunct == false) {
+         
+        tutorialScreen.addArrayBox();
+        
+        if(tutorialScreen.active == true && tutorialScreen.arrayBox.containedBoxes[4].type != "empty") {
+        tutorialScreen.twoDArray.altFunct = true;
+        }
+          }
         
         
         

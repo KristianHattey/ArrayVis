@@ -108,9 +108,9 @@ void keyPressed() {
     else {
       boxMode = true;
        if(tutorialScreen.active) {
-         tutorialScreen.arrayBox.drawMode = "container";
-         tutorialScreen.arrayBox.draggable = true;
-         tutorialScreen.arrayBox.altFunct = false;
+         tutorialScreen.arrayBoxes[0].drawMode = "container";
+         tutorialScreen.arrayBoxes[0].draggable = true;
+         tutorialScreen.arrayBoxes[0].altFunct = false;
        }
        
     }
