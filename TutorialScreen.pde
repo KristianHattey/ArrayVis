@@ -52,6 +52,7 @@ class TutorialScreen {
    spawner.update();
    restart.update();
    arrayBox.update();
+   this.arrayBoxes[0].update();
    
    if(pageNumber != 1) {
      twoDArray.update();
@@ -71,6 +72,7 @@ class TutorialScreen {
    spawner.draw();
    restart.draw();
    
+   
    if(pageNumber != 1) {
      twoDArray.draw();
    }
@@ -85,10 +87,10 @@ class TutorialScreen {
     
    }
    
-   for(int i = 0; i < arrayBox.containedBoxes.length && arrayBox.drawMode != "container"; i++) {
+   for(int i = 0; i < this.arrayBoxes[0].containedBoxes.length && this.arrayBoxes[0].drawMode != "container"; i++) {
      
-     arrayBox.containedBoxes[i].update();
-    arrayBox.containedBoxes[i].draw();
+     this.arrayBoxes[0].containedBoxes[i].update();
+    this.arrayBoxes[0].containedBoxes[i].draw();
     
    }
    
@@ -120,19 +122,22 @@ class TutorialScreen {
   for(int i = 0; i < boxes.length; i++) {
     this.arrayBoxes[i] = new ArrayBox(250, 250, 300, 100); 
    } 
+   
+   this.arrayBoxes[0].altFunct = false;
+   this.arrayBoxes[0].drawMode = "container";
  }
  
  void addBox() {
    
     Box b = boxes[0];
-    for(int i = 0; i < arrayBox.containedBoxes.length; i++) {
+    for(int i = 0; i < this.arrayBoxes[0].containedBoxes.length; i++) {
       
-      if (arrayBox.containedBoxes[i].type == "empty" && b.w != 0) {
-        arrayBox.containedBoxes[i] = b;
+      if (this.arrayBoxes[0].containedBoxes[i].type == "empty" && b.w != 0) {
+        this.arrayBoxes[0].containedBoxes[i] = b;
         print("can fill");
         break;
       }
-      else if (arrayBox.containedBoxes[i].w != 0){
+      else if (this.arrayBoxes[0].containedBoxes[i].w != 0){
         print("full");
       }
       

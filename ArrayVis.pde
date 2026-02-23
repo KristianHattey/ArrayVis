@@ -103,7 +103,11 @@ void keyPressed() {
   if(key == 'b') {
     if(boxMode == true) {
       boxMode = false;
-      if(tutorialScreen.active) tutorialScreen.arrayBox.drawMode = "";
+      if(tutorialScreen.active) {
+        tutorialScreen.arrayBoxes[0].drawMode = "";
+         tutorialScreen.arrayBoxes[0].draggable = false;
+         if(tutorialScreen.arrayBoxes[0].containedBoxes[4].type != "empty") tutorialScreen.arrayBoxes[0].altFunct = true;
+      }
     }
     else {
       boxMode = true;
