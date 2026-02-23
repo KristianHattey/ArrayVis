@@ -82,6 +82,17 @@ class ArrayBox extends Button {
       containedBoxes[4].x = x + 200;
      containedBoxes[4].y = y;
      containedBoxes[4].draw();
+     
+     fill(0,0,0);
+    if (tutorialScreen.pageNumber != 0) {
+      textSize(18);
+    text(containedBoxes[0].type + "  " + containedBoxes[1].type, x + 15, y+80);
+
+    text(containedBoxes[2].type + "  " + containedBoxes[3].type, x + 130,y+80);
+
+    text(containedBoxes[4].type,x+245,y+80);
+
+    }
   }
   
   void addBox() {

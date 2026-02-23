@@ -20,11 +20,15 @@ class TutorialScreen {
  
  int randomChance = 0;
  
+ int pageNumber = 0;
  
- TutorialScreen() {
+ 
+ TutorialScreen(int page) {
  for(int i = 0; i < boxes.length; i++) {
     this.boxes[i] = new Box(0, 0, 0, 0, "free"); 
    }
+   
+   pageNumber = page;
  }
  
  void setup() {

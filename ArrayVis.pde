@@ -7,8 +7,14 @@ float gameTime = dt/1000;
 
 
  HowToPlayScreen howtoPlay = new HowToPlayScreen();
- TutorialScreen tutorialScreen = new TutorialScreen();
+ TutorialScreen tutorialScreen = new TutorialScreen(1);
+ OrderScreen orderScreen = new OrderScreen(1);
+ 
+ String order1 = "4x Cars, 1x Bear";
+ String order2 = "15x Bear, 5x Cars, 5x Trains";
 
+
+boolean transitionedScreen = false;
 
 
 void setup() {
@@ -32,36 +38,50 @@ void draw() {
     tutorialScreen.draw();
   }
   
+  if (orderScreen.active == true) {
+    orderScreen.update();
+    orderScreen.draw();
+  }
+  
+  
+  
 }
 
-void switchScreens(String type) {
+void switchScreens(String type, int screenNumber) {
   
-  if (type == "redoTutorial") {
-     tutorialScreen = new TutorialScreen();
+  if (type == "redoTutorial" && transitionedScreen == false) {
+    
+     
+     tutorialScreen = new TutorialScreen(screenNumber);
      tutorialScreen.active = true;
+     
+     orderScreen.active = false;
+     
+     transitionedScreen = false;
+     
     }
   
-  if (type == "titleToTutorial") {
+  else if (type == "titleToTutorial") {
      if (howtoPlay.active == true) {
       howtoPlay.active = false;
       
       tutorialScreen.active = true;
      
+     transitionedScreen = false;
+    }
   }
   
-  if (type == "tutorialToTutorial") {
+   else if (type == "order") {
     
     if(tutorialScreen.active == true) {
       tutorialScreen.active = false;
     
+      }
+      
+      orderScreen.active = true;
+      
+      transitionedScreen = false;
+    
     }
-    
-    
-   
-    
-    
-  }
-  
-  }
   
 }

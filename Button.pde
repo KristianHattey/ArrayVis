@@ -2,7 +2,7 @@ class Button {
   
   
   
-  
+  int screenNumber = 1;
   public boolean result = false;
   
   boolean isHovered = false;
@@ -80,11 +80,30 @@ class Button {
         isPressedButton = true;
         
         if(buttonType == "tutorialButton") {
-         switchScreens("titleToTutorial"); 
+         switchScreens("titleToTutorial", 1); 
+        }
+        
+        if (buttonType == "orderNext") {
+          
+          if(orderScreen.active && orderScreen.orderScreenN == 1) {
+            
+            switchScreens("redoTutorial",2);
+            
+            
+          }
+          
+         
         }
         
         if (buttonType == "next") {
-          switchScreens("tutorialToTutorial");
+          
+          
+          
+         if (tutorialScreen.active && tutorialScreen.pageNumber == 1) {
+            
+            switchScreens("order",1);
+            
+          }
         }
         
         if (buttonType == "spawn") {
@@ -102,7 +121,7 @@ class Button {
           
         }
         if (buttonType == "restartTut") {
-          switchScreens("redoTutorial");
+          switchScreens("redoTutorial", tutorialScreen.pageNumber);
           
         }
         
@@ -116,6 +135,7 @@ class Button {
     
     if (!mousePressed) {
       isPressedButton = false;
+      
       return false;
     }
     
