@@ -121,10 +121,13 @@ class TutorialScreen {
  void newArrayBox() {
   for(int i = 0; i < boxes.length; i++) {
     this.arrayBoxes[i] = new ArrayBox(250, 250, 300, 100); 
+    this.arrayBoxes[i].altFunct = false;
+    boxMode = false;
+    this.arrayBoxes[i].drawMode = "";
+    
    } 
    
-   this.arrayBoxes[0].altFunct = false;
-   this.arrayBoxes[0].drawMode = "container";
+   
  }
  
  void addBox() {
