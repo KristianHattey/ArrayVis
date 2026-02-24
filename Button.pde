@@ -104,6 +104,14 @@ class Button {
             switchScreens("order",1);
             
           }
+          
+          if (tutorialScreen.active && tutorialScreen.pageNumber == 2) {
+            orderScreen.bears = tutorialScreen.twoDArray.bears;
+            orderScreen.cars = tutorialScreen.twoDArray.cars;
+            orderScreen.trains = tutorialScreen.twoDArray.trains;
+            switchScreens("order", 2);
+            
+          }
         }
         
         if (buttonType == "last") {
@@ -115,6 +123,14 @@ class Button {
             switchScreens("tutorialTitle",0);
             
           }
+          
+          if(orderScreen.active && orderScreen.orderScreenN == 2) {
+            
+            switchScreens("redoTutorial", 2);
+            
+            
+          }
+          
         }
         
         if (buttonType == "spawn") {
@@ -125,7 +141,7 @@ class Button {
          
         tutorialScreen.addBox();
         
-        if(tutorialScreen.active == true && tutorialScreen.arrayBox.containedBoxes[4].type != "empty") {
+        if(tutorialScreen.active == true && tutorialScreen.arrayBoxes[0].containedBoxes[4].type != "empty") {
         tutorialScreen.arrayBoxes[0].altFunct = true;
         }
         
@@ -149,13 +165,16 @@ class Button {
         
         if (buttonType == "TDArrayBox" && altFunct == false) {
          
-          tutorialScreen.arrayBoxes[0].altFunct = true;
+          
         tutorialScreen.addArrayBox();
+        tutorialScreen.twoDArray.uncounted = true;
+        tutorialScreen.twoDArray.tallyCount();
         
         
-        if(tutorialScreen.active == true && tutorialScreen.arrayBox.containedBoxes[4].type != "empty") {
+        if(tutorialScreen.active == true && tutorialScreen.twoDArray.containedArrays[3].type != "empty") {
         tutorialScreen.twoDArray.altFunct = true;
         }
+        
           }
         
         

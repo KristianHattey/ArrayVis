@@ -94,6 +94,7 @@ void switchScreens(String type, int screenNumber) {
     
       }
       
+      orderScreen.orderScreenN = screenNumber;
       orderScreen.active = true;
       
       transitionedScreen = false;

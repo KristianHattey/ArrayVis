@@ -10,7 +10,7 @@ class TutorialScreen {
  
  Button restart = new Button(720, 30, 50, 50, "restartTut");
  
- ArrayBox arrayBox = new ArrayBox(250, 250, 300, 100);
+
  
  
  
@@ -35,7 +35,7 @@ class TutorialScreen {
    }
    
    for(int i = 0; i < boxes.length; i++) {
-    this.arrayBoxes[i] = arrayBox;
+    this.arrayBoxes[i] = new ArrayBox(250, 250, 300, 100);
    }
    
    pageNumber = page;
@@ -51,7 +51,7 @@ class TutorialScreen {
    last.update();
    spawner.update();
    restart.update();
-   arrayBox.update();
+  
    this.arrayBoxes[0].update();
    
    if(pageNumber != 1) {
@@ -66,7 +66,7 @@ class TutorialScreen {
    
   
    
-   arrayBox.draw();
+ 
    next.draw();
    last.draw();
    spawner.draw();

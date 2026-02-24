@@ -2,6 +2,10 @@ class TDArrayBox extends Button {
   
   ArrayBox[] containedArrays;
   
+  int cars, trains, bears = 0;
+  
+    boolean uncounted = true;
+  
   TDArrayBox(float x, float y, float w, float h) {
    super(x, y, w, h, "TDArrayBox");
    
@@ -10,7 +14,9 @@ class TDArrayBox extends Button {
    for(int i = 0; i < containedArrays.length; i++) {
      containedArrays[i] = new ArrayBox(0, 0, 0, 0);
      containedArrays[i].drawMode = "container";
+     containedArrays[i].type = "empty";
    }
+   
    
    
    
@@ -23,6 +29,9 @@ class TDArrayBox extends Button {
   
   void update() {
     super.update();
+    
+    tallyCount();
+  
 
   }
   
@@ -58,7 +67,9 @@ class TDArrayBox extends Button {
     }
     
     
-    
+    text("cars x" + cars, 275, 575);
+    text("bears x" + bears, 350, 575);
+    text("trains x" + trains, 425,575);
      
      fill(0,0,0);
     if (tutorialScreen.pageNumber != 0) {
@@ -66,6 +77,39 @@ class TDArrayBox extends Button {
     
 
     }   
+  }
+  
+  void tallyCount() {
+    if(uncounted == true) {
+       uncounted = false;
+       
+       cars = 0; 
+       trains = 0;
+       bears = 0;
+       
+       for(int i = 0; i < containedArrays.length; i++) {
+         
+         for(int j = 0; j < containedArrays[i].containedBoxes.length; j++) {
+          
+          if(containedArrays[i].containedBoxes[j].type == "bear") {
+            bears += 1;
+            
+          }
+          else if(containedArrays[i].containedBoxes[j].type == "car") {
+            cars += 1;
+  
+          }
+  
+          else if(containedArrays[i].containedBoxes[j].type == "train") {
+            trains += 1;
+  
+          }
+         }
+     }
+     
+    }
+   
+    
   }
   
 }
