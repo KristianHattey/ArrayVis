@@ -7,7 +7,7 @@ class OrderScreen {
  
  Button next = new Button(700, 100, 50, 50, "orderNext");
  
- Button last = new Button(600, 100, 50, 50, "last");
+ Button last = new Button(600, 100, 50, 50, "orderLast");
  
  int bears = 0;
  int cars = 0;

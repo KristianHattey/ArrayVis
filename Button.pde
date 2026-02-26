@@ -74,7 +74,7 @@ class Button {
       
       
       
-      if(mousePressed && (mouseButton == LEFT) && isPressedButton == false) {
+      if(mousePressed && (mouseButton == LEFT) && isPressedButton == false && prevLeftClick == false) {
         baseColor = pressedColor;
         leftClick = true;
         isPressedButton = true;
@@ -91,6 +91,15 @@ class Button {
             
             
           }
+          
+          if(orderScreen.active && orderScreen.orderScreenN == 2) {
+            
+            switchScreens("redoTutorial",3);
+            
+            
+          }
+          
+          
           
          
         }
@@ -112,6 +121,14 @@ class Button {
             switchScreens("order", 2);
             
           }
+          
+          if (tutorialScreen.active && tutorialScreen.pageNumber == 3) {
+            orderScreen.bears = tutorialScreen.twoDArray.bears;
+            orderScreen.cars = tutorialScreen.twoDArray.cars;
+            orderScreen.trains = tutorialScreen.twoDArray.trains;
+            switchScreens("order", 3);
+            
+          }
         }
         
         if (buttonType == "last") {
@@ -124,13 +141,44 @@ class Button {
             
           }
           
-          if(orderScreen.active && orderScreen.orderScreenN == 2) {
+      
+          
+          
+          if (tutorialScreen.active && tutorialScreen.pageNumber == 2 && orderScreen.active == false) {
+            
+            switchScreens("order", 1);
+            
+          }
+          
+           if (tutorialScreen.active && tutorialScreen.pageNumber == 3 && orderScreen.active == false) {
+            
+            switchScreens("order", 2);
+            
+          }
+          
+        }
+        
+        if (buttonType == "orderLast") {
+              if(orderScreen.active && orderScreen.orderScreenN == 2 && tutorialScreen.active == false) {
             
             switchScreens("redoTutorial", 2);
             
             
           }
           
+          if(orderScreen.active && orderScreen.orderScreenN == 3 && tutorialScreen.active == false) {
+            
+            switchScreens("redoTutorial", 3);
+            
+            
+          }
+          
+          if(orderScreen.active && orderScreen.orderScreenN == 1 && tutorialScreen.active == false) {
+            
+            switchScreens("redoTutorial", 1);
+            
+          }
+            
         }
         
         if (buttonType == "spawn") {
@@ -189,7 +237,7 @@ class Button {
     
     if (!mousePressed) {
       isPressedButton = false;
-      
+      leftClick = false;
       return false;
     }
     

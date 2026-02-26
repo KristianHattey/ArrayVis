@@ -57,12 +57,13 @@ void switchScreens(String type, int screenNumber) {
   
   if (type == "redoTutorial" && transitionedScreen == false) {
     
+     transitionedScreen = true;
      
      tutorialScreen = new TutorialScreen(screenNumber);
-     tutorialScreen.active = true;
+     
      
      orderScreen.active = false;
-     
+     tutorialScreen.active = true;
      transitionedScreen = false;
      
     }
@@ -89,6 +90,8 @@ void switchScreens(String type, int screenNumber) {
   
    else if (type == "order") {
     
+     transitionedScreen = true;
+     
     if(tutorialScreen.active == true) {
       tutorialScreen.active = false;
     
@@ -98,6 +101,8 @@ void switchScreens(String type, int screenNumber) {
       orderScreen.active = true;
       
       transitionedScreen = false;
+    
+      tutorialScreen.active = false;
     
     }
   
