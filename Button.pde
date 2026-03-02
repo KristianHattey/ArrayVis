@@ -83,6 +83,10 @@ class Button {
          switchScreens("titleToTutorial", 1); 
         }
         
+        if(buttonType == "sandButton") {
+         switchScreens("sandScreen", 1); 
+        }
+        
         if (buttonType == "orderNext") {
           
           if(orderScreen.active && orderScreen.orderScreenN == 1) {
@@ -161,6 +165,12 @@ class Button {
             
           }
           
+          if (sandScreen.active) {
+            
+            switchScreens("Title",0);
+            
+          }
+          
         }
         
         if (buttonType == "orderLast") {
@@ -186,11 +196,110 @@ class Button {
             
         }
         
+        if (buttonType == "mode") {
+          
+          if (sandScreen.active && sandScreen.modeType == 1) {
+            
+            sandScreen.modeType = 2;
+            
+           
+            
+          }
+          
+          else if (sandScreen.active && sandScreen.modeType == 2) {
+            
+            sandScreen.modeType = 1;
+            
+            
+          }
+          
+          print(sandScreen.modeType);
+          
+        }
+        
+         if (buttonType == "changeSize") {
+          
+          if (sandScreen.currentSize == 5) {
+            
+            
+            sandScreen.currentSize = 1;
+            
+            sandScreen.changeSize(sandScreen.currentSize);
+           
+            
+          }
+          
+          else {
+            sandScreen.currentSize++;
+            
+            sandScreen.changeSize(sandScreen.currentSize);
+          }
+          
+         
+          
+          print(sandScreen.modeType);
+          
+        }
+        
         if (buttonType == "spawn") {
           tutorialScreen.spawnBox();
           
         }
-        if (buttonType == "ArrayBox" && altFunct == false && boxMode == false) {
+        
+         if (buttonType == "pushArray") {
+          
+          if (sandScreen.active) {
+            
+            sandScreen.spawnBox();
+            
+            sandScreen.addBox();
+            
+            
+          }
+        }
+        
+        if (buttonType == "fillArray") {
+          
+          if (sandScreen.active) {
+            
+            sandScreen.spawnBox();
+            
+            sandScreen.fillArray();
+            
+            
+          }
+        }
+        
+        if (buttonType == "type") {
+          
+          if (sandScreen.active) {
+            
+            
+            
+            
+            
+           
+
+              if(sandScreen.chosenType ==   "car") { 
+              sandScreen.chosenType = "bear";
+               }
+
+                else if(sandScreen.chosenType ==   "bear") { 
+                  sandScreen.chosenType = "train";
+               }
+            
+               else if(sandScreen.chosenType ==   "train") { 
+                  sandScreen.chosenType = "car";
+               }
+             
+            
+            
+          }
+        }
+        
+        
+          
+        if (buttonType == "ArrayBox" && altFunct == false && boxMode == false && tutorialScreen.active) {
          
         tutorialScreen.addBox();
         
@@ -202,6 +311,8 @@ class Button {
   
           
         }
+        
+        
         
         else if(buttonType == "ArrayBox" && boxMode == true) {
           if (tutorialScreen.active && tutorialScreen.pageNumber != 1) {
@@ -216,7 +327,12 @@ class Button {
           
         }
         
-        if (buttonType == "TDArrayBox" && altFunct == false) {
+        if (buttonType == "restartSand") {
+          switchScreens("resetSand", sandScreen.modeType);
+          
+        }
+        
+        if (buttonType == "TDArrayBox" && altFunct == false && tutorialScreen.active == true) {
          
           
         tutorialScreen.addArrayBox();
@@ -226,6 +342,21 @@ class Button {
         
         if(tutorialScreen.active == true && tutorialScreen.twoDArray.containedArrays[3].type != "empty") {
         tutorialScreen.twoDArray.altFunct = true;
+        }
+        
+          }
+          
+          
+          if (buttonType == "TDArrayBox" && altFunct == false && sandScreen.active == true) {
+         
+          
+        sandScreen.addArrayBox();
+        sandScreen.twoDArray.uncounted = true;
+        sandScreen.twoDArray.tallyCount();
+        
+        
+        if(sandScreen.active == true && tutorialScreen.twoDArray.containedArrays[3].type != "empty") {
+        sandScreen.twoDArray.altFunct = true;
         }
         
           }

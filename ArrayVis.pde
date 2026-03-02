@@ -10,7 +10,7 @@ float gameTime = dt/1000;
  TutorialScreen tutorialScreen = new TutorialScreen(1);
  OrderScreen orderScreen = new OrderScreen(1);
  FinalScreen finalScreen = new FinalScreen();
- FinalScreen finalScreen = new FinalScreen();
+ SandboxScreen sandScreen = new SandboxScreen(1);
  
  String order1 = "4x Cars, 1x Bear";
  String order2 = "15x Bear, 5x Cars, 5x Trains";
@@ -57,6 +57,11 @@ void draw() {
     orderScreen.draw();
   }
   
+  if (sandScreen.active == true) {
+    sandScreen.update();
+   sandScreen.draw();
+  }
+  
   
   
 }
@@ -96,6 +101,16 @@ void switchScreens(String type, int screenNumber) {
     }
   }
   
+  else if (type == "Title") {
+     if (howtoPlay.active == false) {
+      howtoPlay.active = true;
+      
+      sandScreen.active = false;
+     
+     transitionedScreen = false;
+    }
+  }
+  
    else if (type == "order") {
     
      transitionedScreen = true;
@@ -118,6 +133,16 @@ void switchScreens(String type, int screenNumber) {
      finalScreen.active = true;
      
      orderScreen.active = false;
+  }
+  
+   else if (type == "sandScreen") {
+      howtoPlay.active = false;
+     sandScreen.active = true;
+  }
+  
+  else if (type == "resetSand") {
+      sandScreen = new SandboxScreen(screenNumber);
+     sandScreen.active = true;
   }
   
 }

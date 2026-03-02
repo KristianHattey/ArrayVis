@@ -86,7 +86,8 @@ class ArrayBox extends Button {
          containedBoxes[0].y = y;
        containedBoxes[0].draw();
        
-        containedBoxes[1].x = x + 50;
+       if(tutorialScreen.active == true) {
+          containedBoxes[1].x = x + 50;
        containedBoxes[1].y = y;
        containedBoxes[1].draw();
        
@@ -101,15 +102,83 @@ class ArrayBox extends Button {
         containedBoxes[4].x = x + 200;
        containedBoxes[4].y = y;
        containedBoxes[4].draw();
+       }
+       
+       if(sandScreen.active == true) {
+         
+         if(sandScreen.currentSize >= 2) {
+            containedBoxes[1].x = x + 50;
+             containedBoxes[1].y = y;
+             containedBoxes[1].draw();
+         }
+         
+         if(sandScreen.currentSize >= 3) {
+            containedBoxes[2].x = x + 100;
+             containedBoxes[2].y = y;
+             containedBoxes[2].draw();
+         }
+         
+          if(sandScreen.currentSize >= 4) {
+            containedBoxes[3].x = x + 150;
+             containedBoxes[3].y = y;
+             containedBoxes[3].draw();
+         }
+         
+       
+         if(sandScreen.currentSize >= 5) {
+            containedBoxes[4].x = x + 200;
+             containedBoxes[4].y = y;
+             containedBoxes[4].draw();
+         }
+       
+     
+       
+        
+       }
+       
+       
        
        fill(0,0,0);
-      if (tutorialScreen.pageNumber != 0) {
+      if (tutorialScreen.pageNumber != 0 && tutorialScreen.active) {
         textSize(18);
       text(containedBoxes[0].type + "  " + containedBoxes[1].type, x + 15, y+80);
   
       text(containedBoxes[2].type + "  " + containedBoxes[3].type, x + 130,y+80);
   
       text(containedBoxes[4].type,x+245,y+80);
+  
+      }
+      
+      
+        if (sandScreen.active) {
+        textSize(18);
+        
+        if(sandScreen.currentSize == 1) {
+           text(containedBoxes[0].type, x + 15, y+80);
+        }
+        
+        if(sandScreen.currentSize == 2) {
+           text(containedBoxes[0].type + "  " + containedBoxes[1].type, x + 15, y+80);
+        }
+        
+        if(sandScreen.currentSize == 3) {
+           text(containedBoxes[0].type + "  " + containedBoxes[1].type, x + 15, y+80);
+           text(containedBoxes[2].type, x + 130,y+80);
+        }
+        
+        if(sandScreen.currentSize >= 4) {
+          text(containedBoxes[0].type + "  " + containedBoxes[1].type, x + 15, y+80);
+            text(containedBoxes[2].type + "  " + containedBoxes[3].type, x + 130,y+80);
+        }
+        
+        if(sandScreen.currentSize == 5) {
+            text(containedBoxes[4].type,x+245,y+80);
+        }
+      
+  
+     
+  
+      
   
       }
      }

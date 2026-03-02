@@ -6,11 +6,19 @@ class SandboxScreen {
  
  Button last = new Button(600, 720, 50, 50, "last");
  
- Button spawner = new Button(30, 30, 175, 50, "pushArray");
+ Button spawner = new Button(550, 100, 125, 60, "pushArray");
+ 
+ Button filler = new Button(675, 100, 75, 60, "fillArray");
+ 
+ Button type = new Button(250, 100, 300, 60, "type");
  
  Button restart = new Button(720, 30, 50, 50, "restartSand");
  
-
+ Button size = new Button(125, 100, 125, 60, "changeSize");
+ 
+ Button modeToggle = new Button(50, 100, 75, 60, "mode");
+ 
+ 
  
  
  
@@ -27,6 +35,10 @@ class SandboxScreen {
  int modeType = 0;
  
  TDArrayBox twoDArray = new TDArrayBox(250, 450, 300, 100);
+ 
+ String chosenType = "car";
+ 
+ int currentSize = 5;
  
  
  SandboxScreen(int mode) {
@@ -48,9 +60,13 @@ class SandboxScreen {
  
  void update() {
     
+   filler.update();
+   type.update();
    last.update();
    spawner.update();
    restart.update();
+   size.update();
+   modeToggle.update();
   
    this.arrayBoxes[0].update();
    
@@ -67,10 +83,13 @@ class SandboxScreen {
   
    
  
-   
+ filler.draw();
+   type.draw();
    last.draw();
    spawner.draw();
    restart.draw();
+   size.draw();
+   modeToggle.draw();
    
    
    if(modeType != 1) {
@@ -99,23 +118,17 @@ class SandboxScreen {
  
  void spawnBox() {
    
-   randomChance = int(random(4));
-   Box b = new Box(150, 200, 50, 50, "car");
-   if (randomChance == 1) {
-   b.type = "car";
-   }
-   else if (randomChance == 2) {
-    b.type = "bear";
-   }
-   else if (randomChance == 3) {
-    b.type = "train";
-   }
+   boxes[0].storedType = chosenType;
+   Box b = new Box(150, 200, 50, 50, boxes[0].storedType);
+   
+   
+  
    
    for(int i = 0; i < boxes.length; i++) {
     boxes[i] = b; 
    }
    
-   print(randomChance);
+   
  }
  
  void newArrayBox() {
@@ -139,6 +152,32 @@ class SandboxScreen {
         this.arrayBoxes[0].containedBoxes[i] = b;
         print("can fill");
         break;
+      }
+      else if (this.arrayBoxes[0].containedBoxes[i].w != 0){
+        print("full");
+      }
+      
+      
+    
+    }
+      
+      
+      b.draggable = false;
+      b.dragging = false;
+      this.boxes[0] = new Box(0, 0, 0, 0, "free"); 
+      
+       
+   }
+   
+   void fillArray() {
+   
+    Box b = boxes[0];
+    for(int i = 0; i < this.arrayBoxes[0].containedBoxes.length; i++) {
+      
+      if (this.arrayBoxes[0].containedBoxes[i].type == "empty" && b.w != 0) {
+        this.arrayBoxes[0].containedBoxes[i] = b;
+        print("can fill");
+        
       }
       else if (this.arrayBoxes[0].containedBoxes[i].w != 0){
         print("full");
@@ -181,4 +220,14 @@ class SandboxScreen {
      newArrayBox();
        
    }
+   
+   void changeSize(int size) {
+     
+     arrayBoxes[0].containedBoxes = new Box[size];
+     for(int i = 0; i < arrayBoxes[0].containedBoxes.length; i++) {
+    this.arrayBoxes[0].containedBoxes[i] = new Box(0, 0, 0, 0, "empty"); 
+   }
+   
+   }
  }
+ 

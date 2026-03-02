@@ -1,10 +1,11 @@
-class HowToPlayScreen extends Screen {
+class LessonScreen {
+
  
   boolean active = true;
   
   Button tutorialB = new Button(200, 650, 175, 80, "tutorialButton");
   Button sandB = new Button(425, 650, 175, 80, "sandButton");
-  HowToPlayScreen(){
+  LessonScreen(){
     
   }
   
@@ -46,3 +47,4 @@ class HowToPlayScreen extends Screen {
   }
   
 }
+  

@@ -11,6 +11,7 @@ class Box extends Button {
   
   String type = "";
   String subType = "";
+  String storedType = "car";
   
   Box(float x, float y, float w, float h, String status) {
     super(x, y, w, h, "Box");
