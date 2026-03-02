@@ -22,8 +22,9 @@ class ArrayBox extends Button {
   
   Box targetBox = new Box(0, 0, 0, 0, "empty");
   
-  color animColor = targetBox.normalColor;
-  color originColor = color(0, 0, 0);
+ 
+ 
+ 
   boolean oncePerFrame = false;
   
   boolean animActive = false;
@@ -35,7 +36,8 @@ class ArrayBox extends Button {
    
    containedBoxes = new Box[5];
    
-   
+   this.normalColor = color(140, 140, 0);
+   this.hoveredColor = color(190, 190, 0);
    
    for(int i = 0; i < containedBoxes.length; i++) {
      containedBoxes[i] = new Box(0, 0, 0, 0, "empty");
