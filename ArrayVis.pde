@@ -16,6 +16,7 @@ PImage bKey;
  
  String order1 = "4x Cars, 1x Bear";
  String order2 = "15x Bear, 2x Cars, 3x Trains";
+  String order3 = "7x Bear, 5x Cars, 8x Trains";
 
 
 boolean transitionedScreen = false;

@@ -58,12 +58,26 @@ class OrderScreen {
     
   }
     
-    if (orderScreenN == 1) {
+    if (orderScreenN == 2) {
   text("Order: " + order2, 200, 400);
+  
+  text("Next Order: " + order3, 200, 450);
   
     if (cars == 2 && bears == 15 && trains == 3) {
     text("Order correct!", 200, 500);
     order2Correct = true;
+    }
+    else {
+    text("Please try again", 200, 500);
+    }
+  }
+  
+   if (orderScreenN == 3) {
+  text("Order: " + order3, 200, 400);
+  
+    if (cars == 5 && bears == 7 && trains == 8) {
+    text("Order correct!", 200, 500);
+    order3Correct = true;
     }
     else {
     text("Please try again", 200, 500);

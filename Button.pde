@@ -145,6 +145,8 @@ class Button {
            
             switchScreens("order",1);
             
+            orderScreen.tallyOrder();
+            
           }
           
           if (tutorialScreen.active && tutorialScreen.pageNumber == 2) {
@@ -233,7 +235,7 @@ class Button {
           }
           
           if(orderScreen.active && orderScreen.orderScreenN == 1 && tutorialScreen.active == false) {
-            
+            orderScreen.uncounted = true;
             switchScreens("redoTutorial", 1);
             
           }
