@@ -9,6 +9,7 @@ float gameTime = dt/1000;
  HowToPlayScreen howtoPlay = new HowToPlayScreen();
  TutorialScreen tutorialScreen = new TutorialScreen(1);
  OrderScreen orderScreen = new OrderScreen(1);
+ FinalScreen finalScreen = new FinalScreen();
  
  String order1 = "4x Cars, 1x Bear";
  String order2 = "15x Bear, 5x Cars, 5x Trains";

@@ -99,7 +99,12 @@ class Button {
             
           }
           
-          
+          if(orderScreen.active && orderScreen.orderScreenN == 3) {
+            
+            switchScreens("endscreen",0);
+            
+            
+          }
           
          
         }
