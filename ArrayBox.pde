@@ -18,13 +18,24 @@ class ArrayBox extends Button {
   
   float boxChangeTime = 60;
   
+  int currBoxN = 0; 
   
+  Box targetBox = new Box(0, 0, 0, 0, "empty");
+  
+  color animColor = targetBox.normalColor;
+  color originColor = color(0, 0, 0);
   boolean oncePerFrame = false;
+  
+  boolean animActive = false;
+  
+  Box lastBox = new Box(0, 0, 0, 0, "empty");
   
   ArrayBox(float x, float y, float w, float h) {
    super(x, y, w, h, "ArrayBox");
    
    containedBoxes = new Box[5];
+   
+   
    
    for(int i = 0; i < containedBoxes.length; i++) {
      containedBoxes[i] = new Box(0, 0, 0, 0, "empty");
@@ -61,6 +72,27 @@ class ArrayBox extends Button {
     
     
     oncePerFrame = false;
+    
+    boxChangeTime--;
+    
+    //if(boxChangeTime <= 0) {
+    //  if(!animActive) {
+    //    animActive = true;
+        
+        
+        
+        
+        
+        
+    //    targetBox.updateColor();
+        
+        
+        
+        
+        
+    //    animActive = false;
+    //  }
+    //}
     
     
   

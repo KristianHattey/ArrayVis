@@ -11,7 +11,7 @@ class TutorialScreen {
  Button restart = new Button(720, 30, 50, 50, "restartTut");
  
 
- 
+
  
  
  Button[] buttons;

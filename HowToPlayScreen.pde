@@ -47,6 +47,8 @@ class HowToPlayScreen extends Screen {
    fill(0, 0, 0);
    textSize(32);
    text("Tutorial", 235, 700);
+   
+   text("Sandbox", 455, 700);
   }
   
 }

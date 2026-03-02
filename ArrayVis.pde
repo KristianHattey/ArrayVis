@@ -12,6 +12,10 @@ PImage bear;
 PImage box;
 PImage bg;
 PImage re;
+PImage la;
+PImage ne;
+PImage size;
+PImage mode;
 
  HowToPlayScreen howtoPlay = new HowToPlayScreen();
  TutorialScreen tutorialScreen = new TutorialScreen(1);
@@ -45,6 +49,10 @@ void setup() {
  box = loadImage("boxspawner.png");
  bg = loadImage("bg.png");
  re = loadImage("re.png");
+ ne = loadImage("ne.png");
+ la = loadImage("la.png");
+ size = loadImage("size.png");
+ mode = loadImage("mode.png");
 }
 
 

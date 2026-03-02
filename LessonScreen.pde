@@ -77,7 +77,7 @@ class LessonScreen {
     
     fill(0, 0, 0);
     textSize(24);
-    text("Welcome to Array Shipping Co. ", 125, 225);
+    
     text("A 2D Array is like a shipping crate full of crates.", 125, 250);
     text("Try to fill a bigger order!", 125, 275);
     text("Check this page to review your objective", 125, 300);

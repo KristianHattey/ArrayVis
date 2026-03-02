@@ -109,7 +109,7 @@ class Box extends Button {
   }
   
   void insertBox(Box b) {
-    
+    updateColor();
   this.baseColor = b.baseColor;
   this.hoveredColor = b.hoveredColor;
   this.type = b.type;
@@ -118,8 +118,16 @@ class Box extends Button {
    
    if(tutorialScreen.active == true) {
      tutorialScreen.boxes[0] = new Box(0, 0, 0, 0, "free"); 
+     
+     tutorialScreen.arrayBoxes[0].targetBox = this;
    }
    
    
+  }
+  
+  void updateColor() {
+   this.baseColor = color(255, 255, 255);
+   
+   this.hoveredColor = color(255, 255, 255);
   }
 }

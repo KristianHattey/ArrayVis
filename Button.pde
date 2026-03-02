@@ -91,7 +91,27 @@ class Button {
      normalColor = color(230, 230, 230);
      hoveredColor = color(255, 255, 255);
      pressedColor = color(255, 255, 255);
+     image(ne, x, y);
      
+     
+     
+   }
+   
+   if(buttonType == "changeSize" ) {
+     normalColor = color(230, 230, 230);
+     hoveredColor = color(255, 255, 255);
+     pressedColor = color(255, 255, 255);
+     image(size, x+40, y);
+     
+     
+     
+   }
+   
+   if(buttonType == "mode" ) {
+     normalColor = color(230, 230, 230);
+     hoveredColor = color(255, 255, 255);
+     pressedColor = color(255, 255, 255);
+     image(mode, x, y);
      
      
      
@@ -101,7 +121,7 @@ class Button {
      normalColor = color(230, 230, 230);
      hoveredColor = color(255, 255, 255);
      pressedColor = color(255, 255, 255);
-     
+     image(la, x, y);
      
      
      
