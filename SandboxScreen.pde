@@ -1,0 +1,184 @@
+class SandboxScreen {
+  
+ boolean active = false; 
+ 
+ 
+ 
+ Button last = new Button(600, 720, 50, 50, "last");
+ 
+ Button spawner = new Button(30, 30, 175, 50, "pushArray");
+ 
+ Button restart = new Button(720, 30, 50, 50, "restartSand");
+ 
+
+ 
+ 
+ 
+ Button[] buttons;
+ 
+ Box[] boxes = new Box[1];
+ 
+ Box[] array1;
+ 
+ ArrayBox [] arrayBoxes = new ArrayBox[1];
+ 
+ int randomChance = 0;
+ 
+ int modeType = 0;
+ 
+ TDArrayBox twoDArray = new TDArrayBox(250, 450, 300, 100);
+ 
+ 
+ SandboxScreen(int mode) {
+ for(int i = 0; i < boxes.length; i++) {
+    this.boxes[i] = new Box(0, 0, 0, 0, "free"); 
+   }
+   
+   for(int i = 0; i < boxes.length; i++) {
+    this.arrayBoxes[i] = new ArrayBox(250, 250, 300, 100);
+   }
+   
+   modeType = mode;
+ }
+ 
+ void setup() {
+   
+ 
+ }
+ 
+ void update() {
+    
+   last.update();
+   spawner.update();
+   restart.update();
+  
+   this.arrayBoxes[0].update();
+   
+   if(modeType != 1) {
+     twoDArray.update();
+   }
+ }
+ 
+ void draw() {
+   
+   background(100, 100, 100);
+   fill(200, 200, 190);
+   
+  
+   
+ 
+   
+   last.draw();
+   spawner.draw();
+   restart.draw();
+   
+   
+   if(modeType != 1) {
+     twoDArray.draw();
+   }
+   
+   this.arrayBoxes[0].draw();
+   
+   
+   for(int i = 0; i < boxes.length; i++) {
+     
+     boxes[i].update();
+    boxes[i].draw();
+    
+   }
+   
+   for(int i = 0; i < this.arrayBoxes[0].containedBoxes.length && this.arrayBoxes[0].drawMode != "container"; i++) {
+     
+     this.arrayBoxes[0].containedBoxes[i].update();
+    this.arrayBoxes[0].containedBoxes[i].draw();
+    
+   }
+   
+ }
+ 
+ 
+ void spawnBox() {
+   
+   randomChance = int(random(4));
+   Box b = new Box(150, 200, 50, 50, "car");
+   if (randomChance == 1) {
+   b.type = "car";
+   }
+   else if (randomChance == 2) {
+    b.type = "bear";
+   }
+   else if (randomChance == 3) {
+    b.type = "train";
+   }
+   
+   for(int i = 0; i < boxes.length; i++) {
+    boxes[i] = b; 
+   }
+   
+   print(randomChance);
+ }
+ 
+ void newArrayBox() {
+  for(int i = 0; i < boxes.length; i++) {
+    this.arrayBoxes[i] = new ArrayBox(250, 250, 300, 100); 
+    this.arrayBoxes[i].altFunct = false;
+    boxMode = false;
+    this.arrayBoxes[i].drawMode = "";
+    
+   } 
+   
+   
+ }
+ 
+ void addBox() {
+   
+    Box b = boxes[0];
+    for(int i = 0; i < this.arrayBoxes[0].containedBoxes.length; i++) {
+      
+      if (this.arrayBoxes[0].containedBoxes[i].type == "empty" && b.w != 0) {
+        this.arrayBoxes[0].containedBoxes[i] = b;
+        print("can fill");
+        break;
+      }
+      else if (this.arrayBoxes[0].containedBoxes[i].w != 0){
+        print("full");
+      }
+      
+      
+    
+    }
+      
+      
+      b.draggable = false;
+      b.dragging = false;
+      this.boxes[0] = new Box(0, 0, 0, 0, "free"); 
+      
+       
+   }
+   
+   void addArrayBox() {
+   
+    ArrayBox b = arrayBoxes[0];
+    for(int i = 0; i < twoDArray.containedArrays.length; i++) {
+      
+      if (twoDArray.containedArrays[i].w == 0 && b.w != 0) {
+        twoDArray.containedArrays[i] = b;
+        b.drawMode = "container";
+        print("can fill");
+        break;
+      }
+      else if (twoDArray.containedArrays[i].w != 0){
+        print("full");
+      }
+      
+      
+    
+    }
+      
+      
+      b.draggable = false;
+      b.dragging = false;
+     newArrayBox();
+       
+   }
+ }
