@@ -40,6 +40,12 @@ void draw() {
     howtoPlay.draw();
   }
   
+  if (finalScreen.active == true) {
+    finalScreen.update();
+
+    finalScreen.draw();
+  }
+  
   if (tutorialScreen.active == true) {
     tutorialScreen.update();
     tutorialScreen.draw();
@@ -106,6 +112,12 @@ void switchScreens(String type, int screenNumber) {
       tutorialScreen.active = false;
     
     }
+    
+     else if (type == "endscreen") {
+     finalScreen.active = true;
+     
+     orderScreen.active = false;
+  }
   
 }
 

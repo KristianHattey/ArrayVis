@@ -1,6 +1,6 @@
 class FinalScreen extends Screen {
  
-  boolean active = true;
+  boolean active = false;
   
   Button sandB = new Button(200, 650, 175, 80, "sandboxButton");
   FinalScreen(){
@@ -21,7 +21,7 @@ class FinalScreen extends Screen {
     
     fill(0, 0, 0);
     textSize(48);
-    text("Congratulations!", 275, 140);
+    text("Congratulations!", 230, 140);
     
     fill(200, 200, 190);
     rect(200, 200, 400, 400);
@@ -29,7 +29,8 @@ class FinalScreen extends Screen {
     fill(0, 0, 0);
     textSize(24);
     text("You learned what an array is.", 215, 225);
-    text("Feel free to experience the sandbox by pressing below!", 215, 250);
+    text("Feel free to experience the sandbox ", 215, 250);
+     text("by pressing the button below!", 215, 275);
     
     
     
@@ -39,7 +40,7 @@ class FinalScreen extends Screen {
    sandB.draw();
    fill(0, 0, 0);
    textSize(32);
-   text("Tutorial", 235, 700);
+   text("Sandbox", 235, 700);
   }
   
 }
