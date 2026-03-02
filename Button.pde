@@ -117,6 +117,16 @@ class Button {
      
    }
    
+   if(buttonType == "fillArray" ) {
+     normalColor = color(230, 230, 230);
+     hoveredColor = color(255, 255, 255);
+     pressedColor = color(255, 255, 255);
+     image(fill, x, y);
+     
+     
+     
+   }
+   
    if(buttonType == "last" || buttonType == "orderLast" || buttonType == "lessLast" ) {
      normalColor = color(230, 230, 230);
      hoveredColor = color(255, 255, 255);

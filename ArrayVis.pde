@@ -16,6 +16,7 @@ PImage la;
 PImage ne;
 PImage size;
 PImage mode;
+PImage fill;
 
  HowToPlayScreen howtoPlay = new HowToPlayScreen();
  TutorialScreen tutorialScreen = new TutorialScreen(1);
@@ -53,6 +54,7 @@ void setup() {
  la = loadImage("la.png");
  size = loadImage("size.png");
  mode = loadImage("mode.png");
+ fill = loadImage("fill.png");
 }
 
 
