@@ -9,6 +9,9 @@ class Box extends Button {
   boolean dragging = false;
   boolean draggable = true;
   
+  boolean moving = true; 
+  float targetLocationY = 200; 
+  
   String type = "";
   String subType = "";
   String storedType = "car";
@@ -75,6 +78,12 @@ class Box extends Button {
       
       
     }
+    
+    
+    if(this.y == targetLocationY) moving = false;
+    if(moving == true) this.y+=10;
+    
+    
   
   
   }

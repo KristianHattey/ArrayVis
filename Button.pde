@@ -76,6 +76,46 @@ class Button {
      
      
    }
+   
+    if(buttonType == "restartTut" || buttonType == "restartSand") {
+     normalColor = color(230, 230, 230);
+     hoveredColor = color(255, 255, 255);
+     pressedColor = color(255, 255, 255);
+     image(re, x, y);
+     
+     
+     
+   }
+   
+   if(buttonType == "next" || buttonType == "orderNext" || buttonType == "lessNext" ) {
+     normalColor = color(230, 230, 230);
+     hoveredColor = color(255, 255, 255);
+     pressedColor = color(255, 255, 255);
+     
+     
+     
+     
+   }
+   
+   if(buttonType == "last" || buttonType == "orderLast" || buttonType == "lessLast" ) {
+     normalColor = color(230, 230, 230);
+     hoveredColor = color(255, 255, 255);
+     pressedColor = color(255, 255, 255);
+     
+     
+     
+     
+   }
+   
+   if(buttonType == "restartTut" || buttonType == "restartSand") {
+     normalColor = color(230, 230, 230);
+     hoveredColor = color(255, 255, 255);
+     pressedColor = color(255, 255, 255);
+     image(re, x, y);
+     
+     
+     
+   }
   }
   
  boolean isPressed() {

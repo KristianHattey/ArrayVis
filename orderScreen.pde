@@ -39,7 +39,7 @@ class OrderScreen {
  }
  
  void draw() {
-   
+   background(50, 120, 120);
    fill(0, 0, 0);
   text("cars x" + cars, 200, 150);
   text("bears x" + bears, 200, 200);

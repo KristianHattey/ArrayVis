@@ -73,6 +73,27 @@ class SandboxScreen {
    if(modeType != 1) {
      twoDArray.update();
    }
+   
+   if(chosenType == "car") {
+     type.normalColor = color(100, 0, 0);
+      type.hoveredColor = color(255, 0, 0);
+   }
+   
+    
+    else if(chosenType == "bear") {
+      type.normalColor = color(0, 255, 0);
+      type.hoveredColor = color(0, 255, 0);
+      
+    }
+    else if(chosenType == "train") {
+      type.normalColor = color(0, 0, 100);
+      type.hoveredColor = color(0, 0, 255);
+      
+      
+   
+  
+  
+  }
  }
  
  void draw() {
@@ -120,7 +141,7 @@ class SandboxScreen {
    
    boxes[0].storedType = chosenType;
    Box b = new Box(150, 200, 50, 50, boxes[0].storedType);
-   
+   b.moving = false;
    
   
    
@@ -146,6 +167,7 @@ class SandboxScreen {
  void addBox() {
    
     Box b = boxes[0];
+    b.moving = false;
     for(int i = 0; i < this.arrayBoxes[0].containedBoxes.length; i++) {
       
       if (this.arrayBoxes[0].containedBoxes[i].type == "empty" && b.w != 0) {
@@ -172,6 +194,7 @@ class SandboxScreen {
    void fillArray() {
    
     Box b = boxes[0];
+    b.moving = false;
     for(int i = 0; i < this.arrayBoxes[0].containedBoxes.length; i++) {
       
       if (this.arrayBoxes[0].containedBoxes[i].type == "empty" && b.w != 0) {

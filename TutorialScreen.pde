@@ -100,7 +100,7 @@ class TutorialScreen {
  void spawnBox() {
    
    randomChance = int(random(4));
-   Box b = new Box(150, 200, 50, 50, "car");
+   Box b = new Box(150, -50, 50, 50, "car");
    if (randomChance == 1) {
    b.type = "car";
    }

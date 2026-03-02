@@ -16,6 +16,7 @@ class ArrayBox extends Button {
    boolean dragging = false;
   boolean draggable = true;
   
+  float boxChangeTime = 60;
   
   
   boolean oncePerFrame = false;
@@ -60,6 +61,8 @@ class ArrayBox extends Button {
     
     
     oncePerFrame = false;
+    
+    
   
   }
   
