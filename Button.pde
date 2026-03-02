@@ -119,7 +119,8 @@ class Button {
           
          if (tutorialScreen.active && tutorialScreen.pageNumber == 1) {
             
-            switchScreens("order",1);
+           switchScreens("tutToLesson", 1);
+            //switchScreens("order",1);
             
           }
           
