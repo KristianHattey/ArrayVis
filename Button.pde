@@ -67,6 +67,15 @@ class Button {
   void draw() {
     fill(baseColor);
    rect(x, y, w, h); 
+   if(buttonType == "spawn" || buttonType == "pushArray") {
+     normalColor = color(230, 230, 230);
+     hoveredColor = color(255, 255, 255);
+     pressedColor = color(255, 255, 255);
+     image(box, x+ w/4, y);
+     
+     
+     
+   }
   }
   
  boolean isPressed() {

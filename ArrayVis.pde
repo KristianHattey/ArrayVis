@@ -6,6 +6,10 @@ float gameTime = dt/1000;
 
 PImage mouse;
 PImage bKey;
+PImage car;
+PImage train;
+PImage bear;
+PImage box;
 
  HowToPlayScreen howtoPlay = new HowToPlayScreen();
  TutorialScreen tutorialScreen = new TutorialScreen(1);
@@ -33,6 +37,10 @@ void setup() {
  
  mouse = loadImage("Mouse_Left_Key_Dark.png");
  bKey = loadImage("B_Key_Dark.png");
+ car = loadImage("car.png");
+ bear = loadImage("bear.png");
+ train = loadImage("train.png");
+ box = loadImage("boxspawner.png");
 }
 
 

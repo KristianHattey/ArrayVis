@@ -85,10 +85,17 @@ class Box extends Button {
      
      if (dragging == true) {
        rect(mouseX-w/2, mouseY-h/2, w, h); 
+       
+       if(type == "bear") image(bear,mouseX-w/2, mouseY-h/2); 
+        if(type == "car") image(car,mouseX-w/2, mouseY-h/2); 
+       if(type == "train") image(train,mouseX-w/2, mouseY-h/2); 
      }
      
      else {
        rect(x, y, w, h); 
+       if(type == "bear") image(bear,x, y); 
+       if(type == "car") image(car,x, y); 
+       if(type == "train") image(train,x, y); 
      }
   }
   
