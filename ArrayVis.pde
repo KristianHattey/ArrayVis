@@ -4,7 +4,8 @@ float prevTime = 0;
 float gameTime = dt/1000;
 
 
-
+PImage mouse;
+PImage bKey;
 
  HowToPlayScreen howtoPlay = new HowToPlayScreen();
  TutorialScreen tutorialScreen = new TutorialScreen(1);
@@ -14,7 +15,7 @@ float gameTime = dt/1000;
  LessonScreen lessonScreen = new LessonScreen();
  
  String order1 = "4x Cars, 1x Bear";
- String order2 = "15x Bear, 5x Cars, 5x Trains";
+ String order2 = "15x Bear, 2x Cars, 3x Trains";
 
 
 boolean transitionedScreen = false;
@@ -29,6 +30,8 @@ boolean prevLeftClick;
 void setup() {
   size(800, 800);
  
+ mouse = loadImage("Mouse_Left_Key_Dark.png");
+ bKey = loadImage("B_Key_Dark.png");
 }
 
 
@@ -78,7 +81,7 @@ void switchScreens(String type, int screenNumber) {
      
      tutorialScreen = new TutorialScreen(screenNumber);
      
-     
+     lessonScreen.active = false;
      orderScreen.active = false;
      tutorialScreen.active = true;
      transitionedScreen = false;
@@ -95,6 +98,18 @@ void switchScreens(String type, int screenNumber) {
     }
   }
   
+  else if (type == "titleToLesson") {
+     if (howtoPlay.active == true) {
+      howtoPlay.active = false;
+      lessonScreen.pageNumber = screenNumber;
+      lessonScreen.active = true;
+     
+     transitionedScreen = false;
+    }
+  }
+  
+  
+  
   else if (type == "tutToLesson") {
      if (lessonScreen.active == false) {
        
@@ -104,6 +119,7 @@ void switchScreens(String type, int screenNumber) {
       
       
       tutorialScreen.active = false;
+      orderScreen.active = false;
      
      transitionedScreen = false;
     }
@@ -124,6 +140,8 @@ void switchScreens(String type, int screenNumber) {
       howtoPlay.active = true;
       
       sandScreen.active = false;
+      
+      lessonScreen.active = false;
      
      transitionedScreen = false;
     }
@@ -137,6 +155,8 @@ void switchScreens(String type, int screenNumber) {
       tutorialScreen.active = false;
     
       }
+      
+      lessonScreen.active = false;
       
       orderScreen.orderScreenN = screenNumber;
       orderScreen.active = true;
@@ -155,6 +175,7 @@ void switchScreens(String type, int screenNumber) {
   
    else if (type == "sandScreen") {
       howtoPlay.active = false;
+      finalScreen.active = false;
      sandScreen.active = true;
   }
   

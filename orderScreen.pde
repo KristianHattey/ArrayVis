@@ -14,6 +14,8 @@ class OrderScreen {
  int trains = 0;
  boolean uncounted = true;
  boolean order1Correct = false;
+  boolean order2Correct = false;
+   boolean order3Correct = false;
  
  OrderScreen(int orderN) {
    orderScreenN = orderN;
@@ -49,6 +51,19 @@ class OrderScreen {
     if (cars == 4 && bears == 1) {
     text("Order correct!", 200, 500);
     order1Correct = true;
+    }
+    else {
+    text("Please try again", 200, 500);
+    }
+    
+  }
+    
+    if (orderScreenN == 1) {
+  text("Order: " + order2, 200, 400);
+  
+    if (cars == 2 && bears == 15 && trains == 3) {
+    text("Order correct!", 200, 500);
+    order2Correct = true;
     }
     else {
     text("Please try again", 200, 500);

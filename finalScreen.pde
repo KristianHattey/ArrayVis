@@ -2,7 +2,7 @@ class FinalScreen extends Screen {
  
   boolean active = false;
   
-  Button sandB = new Button(200, 650, 175, 80, "sandboxButton");
+  Button sandB = new Button(200, 650, 175, 80, "sandButton");
   FinalScreen(){
     
   }

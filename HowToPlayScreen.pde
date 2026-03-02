@@ -29,12 +29,16 @@ class HowToPlayScreen extends Screen {
     rect(200, 200, 400, 400);
     
     fill(0, 0, 0);
-    textSize(24);
-    text("Press spawn button when array is ", 215, 225);
-    text("empty to spawn crate.", 215, 250);
-    text("b = array to box", 215, 275);
+    textSize(18);
+    text("Spawn(spawn button)/drag crates/", 300, 275);
+    text("activate buttons", 300, 300);
     
-    text("This screen is a placeholder", 215, 300);
+    text("Toggle box mode(2D Arrays Levels)", 300, 375);
+    
+    
+    
+    image(mouse, 190, 225);
+    image(bKey, 190, 325);
     
     
    fill(200, 200, 190);

@@ -80,7 +80,7 @@ class Button {
         isPressedButton = true;
         
         if(buttonType == "tutorialButton") {
-         switchScreens("titleToTutorial", 1); 
+         switchScreens("titleToLesson", 1); 
         }
         
         if(buttonType == "sandButton") {
@@ -89,26 +89,49 @@ class Button {
         
         if (buttonType == "orderNext") {
           
-          if(orderScreen.active && orderScreen.orderScreenN == 1) {
+          if(orderScreen.active && orderScreen.orderScreenN == 1 && orderScreen.order1Correct == true) {
             
-            switchScreens("redoTutorial",2);
+            //switchScreens("redoTutorial",2);
+            
+            switchScreens("tutToLesson", 2);
             
             
           }
           
-          if(orderScreen.active && orderScreen.orderScreenN == 2) {
+          if(orderScreen.active && orderScreen.orderScreenN == 2 && orderScreen.order2Correct == true) {
             
             switchScreens("redoTutorial",3);
             
             
           }
           
-          if(orderScreen.active && orderScreen.orderScreenN == 3) {
+          if(orderScreen.active && orderScreen.orderScreenN == 3 && orderScreen.order3Correct == true) {
             
             switchScreens("endscreen",0);
             
             
           }
+          
+         
+        }
+        
+        if (buttonType == "lessNext") {
+          
+          if(lessonScreen.active && lessonScreen.pageNumber == 1) {
+            
+            switchScreens("redoTutorial",1);
+            
+            
+          }
+          
+          if(lessonScreen.active && lessonScreen.pageNumber == 2) {
+            
+            switchScreens("redoTutorial",2);
+            
+            
+          }
+          
+          
           
          
         }
@@ -119,8 +142,8 @@ class Button {
           
          if (tutorialScreen.active && tutorialScreen.pageNumber == 1) {
             
-           switchScreens("tutToLesson", 1);
-            //switchScreens("order",1);
+           
+            switchScreens("order",1);
             
           }
           
@@ -147,7 +170,7 @@ class Button {
           
          if (tutorialScreen.active && tutorialScreen.pageNumber == 1) {
             
-            switchScreens("tutorialTitle",0);
+            switchScreens("tutToLesson", 1);
             
           }
           
@@ -156,7 +179,7 @@ class Button {
           
           if (tutorialScreen.active && tutorialScreen.pageNumber == 2 && orderScreen.active == false) {
             
-            switchScreens("order", 1);
+            switchScreens("tutToLesson", 2);
             
           }
           
@@ -171,6 +194,26 @@ class Button {
             switchScreens("Title",0);
             
           }
+          
+        }
+        
+        if (buttonType == "lessLast") {
+          
+          
+            if(lessonScreen.active && lessonScreen.pageNumber == 1) {
+            
+            switchScreens("Title",0);
+            
+            
+          }
+          
+          if(lessonScreen.active && lessonScreen.pageNumber == 2) {
+            
+            switchScreens("order",1);
+            
+            
+          }
+         
           
         }
         
